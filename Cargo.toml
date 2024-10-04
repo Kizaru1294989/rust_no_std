@@ -4,3 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+alloc-cortex-m = "0.4.4"
+
+[features]
+global-alloc = []
+
+
+
