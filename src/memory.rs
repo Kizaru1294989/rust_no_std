@@ -26,5 +26,13 @@ impl SlabMemory {
         }
     }
 
-
+    pub unsafe fn initialize(heap_start: *mut u8, heap_size: usize) {
+        let block_count = heap_size / ARENAS.len();
+        let mut current = heap_start;
+        for i in 0..ARENAS.len() {
+            let block_size = (1 << (3 + i)) as usize; // 8, 16, 32, ...
+            ARENAS[i] = Some(Arena::new(current, block_count, block_size));
+            current = current.add(block_count * block_size);
+        }
+    }
 }
