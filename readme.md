@@ -1,12 +1,12 @@
 
 # Arborescence
 
-src/
-├── lib.rs           // Point d'entrée principal
-├── arena.rs         // Gestionnaire des slabs
-├── config.rs        // Définitions de constantes et tailles des blocs
-├── memory.rs        // fonctionnalités principale pour l'allocation et libération de mémoire
-└── utils.rs         // Fonctions utilitaires communes
+* [ ] src/
+  ├── lib.rs           # Point d'entrée principal
+  ├── arena.rs         # Gestionnaire des slabs (zones mémoire dédiées aux tailles fixes)
+  ├── config.rs        # Définitions des constantes et tailles des blocs
+  ├── memory.rs        # Fonctionnalités principales pour l'allocation et la libération de mémoire
+  └── utils.rs         # Fonctions utilitaires communes (ex. alignement)
 
 
 # Slabs
