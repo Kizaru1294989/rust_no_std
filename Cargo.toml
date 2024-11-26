@@ -1,11 +1,15 @@
 [package]
-name = "rust_no_std"
+name = "my_allocator"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-alloc-cortex-m = "0.4.4"
+
 
 [features]
-default = []
-test = [] 
+default = ["no_std"]
+std = []
+no_std = []
+
+[build]
+

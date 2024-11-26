@@ -1,5 +1,4 @@
-use core::{ptr, mem};
-use crate::config::BlockSize;
+use core::ptr;
 
 pub struct Arena {
     start: *mut u8,
