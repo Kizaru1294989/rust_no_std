@@ -22,3 +22,10 @@
 * **Segmentation mémoire** : Chaque taille (8, 16, 32, 64, etc.) est gérée dans une zone dédiée.
 * **Liste chaînée** : Les blocs libres sont suivis via une liste chaînée pour des opérations rapides.
 * **Préallocation** : Toute la mémoire est réservée au démarrage, garantissant un comportement prévisible.
+
+
+## **Source**
+
+  * https://docs.rs/slab/latest/slab/struct.Slab.html
+  * https://github.com/SFBdragon/talc
+  * https://github.com/daniel5151/libc_alloc
