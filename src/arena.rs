@@ -8,3 +8,8 @@ pub struct Arena {
     free_list: *mut FreeNode,
 }
 
+#[repr(C)]
+struct FreeNode {
+    next: *mut FreeNode,
+}
+
