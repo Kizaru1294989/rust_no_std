@@ -26,6 +26,7 @@ impl SlabMemory {
         }
     }
 
+
     pub unsafe fn initialize(heap_start: *mut u8, heap_size: usize) {
         let block_count = heap_size / ARENAS.len();
         let mut current = heap_start;
