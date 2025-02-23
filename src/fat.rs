@@ -14,3 +14,19 @@ pub trait BlockDevice {
     fn write(&self, buffer: &[u8], offset: usize, blocks: usize) -> Result<(), Self::Error>;
 }
 
+/// Structure FAT avec allocation dynamique du buffer via SlabMemory
+#[derive(Debug, Copy, Clone)]
+pub struct FAT<T>
+where
+    T: BlockDevice + Clone + Copy,
+{
+    device: T,
+    fat_offset: usize,
+    start_cluster: u32,
+    previous_cluster: u32,
+    pub(crate) current_cluster: u32,
+    next_cluster: Option<u32>,
+    buffer: &'static mut [u8; BUFFER_SIZE], // Allocation dynamique
+}
+
+
